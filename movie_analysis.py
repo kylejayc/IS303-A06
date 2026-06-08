@@ -44,7 +44,7 @@ def visualize_data(df):
     avg_rating.plot(kind="bar", color="steelblue", edgecolor="white")
     plt.title("Average Rating by Genre")
     plt.xlabel("Genre")
-    plt.ylabel("Average Rating (1–5)")
+    plt.ylabel("Average Rating (1-5)")
     plt.tight_layout()
     plt.savefig("avg_rating_by_genre.png")
     plt.close()
@@ -54,7 +54,7 @@ df = load_data()
 df = clean_data(df)
 
 assert df["rating_1_5"].isna().sum() == 0, "Missing ratings remain"
-assert (df["rating_1_5"].between(1, 5)).all(), "Rating out of 1–5 range"
+assert (df["rating_1_5"].between(1, 5)).all(), "Rating out of 1-5 range"
 
 analyze_data(df)
 visualize_data(df)
